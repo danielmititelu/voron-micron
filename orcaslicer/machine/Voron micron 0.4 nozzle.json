@@ -1,0 +1,27 @@
+{
+	"from": "User",
+	"host_type": "moonraker",
+	"inherits": "MyKlipper 0.4 nozzle",
+	"machine_start_gcode": "M104 S0 ; Stops OrcaSlicer from sending temp waits separately\nM140 S0\nPRINT_START EXTRUDER=[first_layer_temperature] BED=[first_layer_bed_temperature] CHAMBER=[chamber_temperature]",
+	"name": "Voron micron 0.4 nozzle",
+	"print_host": "http://micron.home",
+	"printable_area": [
+		"0x0",
+		"173x0",
+		"173x180",
+		"0x180"
+	],
+	"printable_height": "160",
+	"printer_extruder_id": [
+		"1",
+		"1",
+		"1"
+	],
+	"printer_extruder_variant": [
+		"Direct Drive Standard",
+		"Direct Drive High Flow",
+		"Direct Drive Extra High Flow"
+	],
+	"printer_settings_id": "Voron micron 0.4 nozzle",
+	"version": "2.4.0.9"
+}
