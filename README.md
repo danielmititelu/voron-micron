@@ -20,12 +20,6 @@ Klipper config for a Formbot Micron 180 kit.
 
 Type these in the Mainsail console.
 
-### Restarting
-
-- `RESTART`: reload the config
-- `FIRMWARE_RESTART`: reload the config and reset the boards; needed after a shutdown error
-- `SAVE_CONFIG`: write calibration results into `printer.cfg` and restart
-
 ### Homing and moving
 
 - `G28`: home all axes; the first homing after a restart lifts the gantry about 30 mm
@@ -66,27 +60,11 @@ Z motor names:
 - `QUAD_GANTRY_LEVEL HORIZONTAL_MOVE_Z=15`: same, with more clearance for a badly tilted gantry
 - `PROBE_CALIBRATE`: start the Z offset calibration (paper test)
 
-### Fans
-
-- `M106 S255`: part cooling fans at full speed; `S128` is half speed
-- `M107`: part cooling fans off
-
 ### Bed heater
 
 - `M140 S40`: heat the bed to 40 degrees; `M140 S0` switches it off
 - `PID_CALIBRATE HEATER=heater_bed TARGET=60`: tune the bed heater; follow with `SAVE_CONFIG`
 
-### Filament
-
-Heat the nozzle to the filament's temperature first, for example `M104 S210`.
-
-- `LOAD_FILAMENT`: feed 50 mm into the nozzle; repeat until plastic comes out
-- `LOAD_FILAMENT LENGTH=20`: feed a shorter amount, 50 at most
-- `UNLOAD_FILAMENT`: pull the filament out of the nozzle, then remove it by hand
-
-### Bed mesh
-
-- `BED_MESH_CALIBRATE`: probe a 5 x 5 grid of the bed; the result shows on the Heightmap page in Mainsail
 
 ### Input shaper
 
@@ -98,11 +76,3 @@ Graphs, over SSH on the CB1 and before it is rebooted:
 
 - `~/klipper/scripts/calibrate_shaper.py /tmp/calibration_data_x_*.csv -o ~/printer_data/config/shaper_x.png`: graph for X
 - `~/klipper/scripts/calibrate_shaper.py /tmp/calibration_data_y_*.csv -o ~/printer_data/config/shaper_y.png`: graph for Y
-
-## Backup
-
-`config/` is a copy of `~/printer_data/config` on the printer. Run this on the Mac; it needs an SSH host named `micron` in `~/.ssh/config`.
-
-- `scripts/pull-config.sh`: sync `config/` with the printer; review and commit the changes afterwards
-
-The sync mirrors the printer, so files deleted there are deleted from `config/` too. Symlinks, `SAVE_CONFIG` backups (`printer-<date>_<time>.cfg`) and `*.secrets` files are skipped.
