@@ -1,0 +1,20 @@
+{
+	"from": "User",
+	"inherits": "Voron 2.4 250 0.4 nozzle",
+	"name": "Voron preset 0.4 nozzle",
+	"printable_area": [
+		"0x0",
+		"173x0",
+		"173x180",
+		"0x180"
+	],
+	"printable_height": "160",
+	"printer_extruder_id": [
+		"1"
+	],
+	"printer_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"printer_settings_id": "Voron preset 0.4 nozzle",
+	"version": "2.4.0.3"
+}

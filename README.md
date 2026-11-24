@@ -63,7 +63,7 @@ Z motor names:
 ### Bed heater
 
 - `M140 S40`: heat the bed to 40 degrees; `M140 S0` switches it off
-- `PID_CALIBRATE HEATER=heater_bed TARGET=60`: tune the bed heater; follow with `SAVE_CONFIG`
+- `PID_CALIBRATE HEATER=heater_bed TARGET=105`: tune the bed heater; follow with `SAVE_CONFIG`
 
 
 ### Input shaper
