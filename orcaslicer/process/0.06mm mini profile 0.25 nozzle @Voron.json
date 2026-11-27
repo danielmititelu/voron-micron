@@ -1,0 +1,15 @@
+{
+	"enable_support": "1",
+	"from": "User",
+	"inherits": "0.06mm Fine 0.25 nozzle @Voron",
+	"name": "0.06mm mini profile 0.25 nozzle @Voron",
+	"print_extruder_id": [
+		"1"
+	],
+	"print_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"print_settings_id": "0.06mm mini profile 0.25 nozzle @Voron",
+	"support_type": "tree(auto)",
+	"version": "2.4.0.3"
+}
